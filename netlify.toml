@@ -1,0 +1,4 @@
+# Netlify 部署設定：純靜態網站，不需要建置步驟
+[build]
+  publish = "site"
+  command = "echo '靜態網站，直接發布 site/ 資料夾'"

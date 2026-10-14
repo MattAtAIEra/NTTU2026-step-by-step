@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 170" width="160" height="170" role="img" aria-labelledby="t d"><title id="t">墨墨</title><desc id="d">綁紅色頭巾的三花貓墨墨。</desc><style>
+.o{stroke:#4B3426;stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+.o2{stroke:#4B3426;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.o4{stroke:#4B3426;stroke-width:4;stroke-linejoin:round;stroke-linecap:round}
+.zi{font-family:'LXGW WenKai TC','BiauKai','DFKai-SB','TW-Kai','Kaiti TC','STKaiti','KaiTi','Noto Serif TC','Noto Sans TC','PingFang TC','Microsoft JhengHei',serif;font-weight:700;text-anchor:middle;dominant-baseline:central}
+.blink{animation:blink 5s infinite;transform-box:fill-box;transform-origin:center}
+@keyframes blink{0%,93%,100%{transform:scaleY(1)}95%{transform:scaleY(.08)}97%{transform:scaleY(1)}}
+.drift{animation:drift 26s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translateX(-40px)}to{transform:translateX(40px)}}
+.bob{animation:bob 2.6s ease-in-out infinite alternate}
+@keyframes bob{from{transform:translateY(4px)}to{transform:translateY(-8px)}}
+.pulse{animation:pulse 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pulse{0%,100%{opacity:.7;transform:scale(.96)}50%{opacity:1;transform:scale(1.06)}}
+.twinkle{animation:twinkle 1.8s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes twinkle{0%,100%{opacity:.15;transform:scale(.5)}50%{opacity:1;transform:scale(1)}}
+.flow{stroke-dasharray:16 26;animation:flow 1.6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-42}}
+.sway{animation:sway 2.8s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:50% 100%}
+@keyframes sway{from{transform:rotate(-4deg)}to{transform:rotate(4deg)}}
+.wobble{animation:wobble 1.6s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:50% 100%}
+@keyframes wobble{from{transform:rotate(-3.5deg)}to{transform:rotate(3.5deg)}}
+.wag{animation:wag 1s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:0% 100%}
+@keyframes wag{from{transform:rotate(-8deg)}to{transform:rotate(10deg)}}
+.spin{animation:spin 5s linear infinite;transform-box:fill-box;transform-origin:center}
+@keyframes spin{to{transform:rotate(360deg)}}
+.rays{animation:spin 40s linear infinite;transform-box:fill-box;transform-origin:center}
+.flash{animation:flash 3.2s steps(1) infinite}
+@keyframes flash{0%,100%{opacity:0}8%{opacity:1}12%{opacity:0}16%{opacity:1}24%{opacity:0}}
+.hop{animation:hop 1.4s ease-in-out infinite}
+@keyframes hop{0%,100%{transform:translate(0,0)}25%{transform:translate(-14px,-22px)}50%{transform:translate(-28px,0)}75%{transform:translate(-14px,-22px)}}
+.bonk{animation:bonk 2.6s ease-in infinite}
+@keyframes bonk{0%{transform:translateX(-70px);opacity:0}10%{opacity:1}45%{transform:translateX(0)}100%{transform:translateX(0)}}
+.boom{animation:boom 2.6s ease-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes boom{0%,44%{opacity:0;transform:scale(.2)}50%{opacity:1;transform:scale(1.15)}70%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1)}}
+.dangle{animation:dangle 2.2s ease-in-out infinite alternate}
+@keyframes dangle{from{transform:translateY(0)}to{transform:translateY(12px)}}
+.fly{animation:fly 3.4s ease-in-out infinite alternate}
+@keyframes fly{from{transform:translate(0,6px)}to{transform:translate(6px,-12px)}}
+.shake{animation:shake .5s ease-in-out infinite alternate}
+@keyframes shake{from{transform:translate(-2px,1px)}to{transform:translate(2px,-1px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style><defs><linearGradient id="eyeBoy" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#24150C"/><stop offset="0.55" stop-color="#5A361E"/><stop offset="1" stop-color="#B07444"/></linearGradient><linearGradient id="eyeGirl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A140C"/><stop offset="0.5" stop-color="#6B3A22"/><stop offset="1" stop-color="#D08A55"/></linearGradient><linearGradient id="eyeAdult" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1B1410"/><stop offset="0.6" stop-color="#3E2C22"/><stop offset="1" stop-color="#7A5A45"/></linearGradient><radialGradient id="glowY" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FFFBD6" stop-opacity="1"/><stop offset="0.45" stop-color="#FFE066" stop-opacity="0.75"/><stop offset="1" stop-color="#FFD23F" stop-opacity="0"/></radialGradient><radialGradient id="glowW" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.95"/><stop offset="0.5" stop-color="#FFF6C8" stop-opacity="0.6"/><stop offset="1" stop-color="#FFF6C8" stop-opacity="0"/></radialGradient></defs><g transform="translate(80 162) scale(1 1) translate(-70 -150)"><g class="cat"><clipPath id="catClip5"><path d="M 20 66 C 20 34, 120 34, 120 66 C 120 94, 98 108, 70 108 C 42 108, 20 94, 20 66 Z"/><path d="M 26 52 L 28 10 L 62 34 Z"/><path d="M 78 34 L 112 10 L 114 52 Z"/></clipPath><g class="wag"><g><path d="M 96 136 C 130 134, 136 96, 122 82 C 114 74, 104 82, 110 92" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#4B3426" stroke-width="17"/><path d="M 96 136 C 130 134, 136 96, 122 82 C 114 74, 104 82, 110 92" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#F4A04A" stroke-width="11"/></g><g><path d="M 122 82 C 114 74, 104 82, 110 92" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#4B3426" stroke-width="11"/><path d="M 122 82 C 114 74, 104 82, 110 92" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#7A4B2A" stroke-width="11"/></g></g><path d="M 42 148 C 34 122, 46 100, 70 100 C 94 100, 106 122, 98 148 Z" fill="#fff" class="o"/><path d="M 84 106 C 96 112, 102 128, 98 146 L 88 146 C 92 130, 88 116, 80 108 Z" fill="#F4A04A"/><ellipse cx="56" cy="148" rx="13" ry="7" fill="#fff" class="o"/><ellipse cx="84" cy="148" rx="13" ry="7" fill="#fff" class="o"/><ellipse cx="46" cy="104" rx="9" ry="11" fill="#fff" class="o"/><ellipse cx="94" cy="104" rx="9" ry="11" fill="#fff" class="o"/><path d="M 26 52 L 28 10 L 62 34 Z" fill="#fff" class="o"/><path d="M 78 34 L 112 10 L 114 52 Z" fill="#fff" class="o"/><path d="M 20 66 C 20 34, 120 34, 120 66 C 120 94, 98 108, 70 108 C 42 108, 20 94, 20 66 Z" fill="#fff" class="o"/><g clip-path="url(#catClip5)"><ellipse cx="30" cy="44" rx="34" ry="30" fill="#F4A04A"/><circle cx="112" cy="22" r="20" fill="#7A4B2A"/><ellipse cx="110" cy="54" rx="16" ry="13" fill="#7A4B2A"/></g><path d="M 26 52 L 28 10 L 62 34 Z" fill="none" class="o"/><path d="M 78 34 L 112 10 L 114 52 Z" fill="none" class="o"/><path d="M 20 66 C 20 34, 120 34, 120 66 C 120 94, 98 108, 70 108 C 42 108, 20 94, 20 66 Z" fill="none" class="o"/><path d="M 33 44 L 34 22 L 52 34 Z" fill="#FFB3C1"/><path d="M 88 34 L 106 22 L 107 44 Z" fill="#FFB3C1"/><path d="M 22 50 Q 70 30 118 50 L 119 62 Q 70 44 21 62 Z" fill="#E53935" class="o2"/><polygon points="70,40 71.53,43.9 75.71,44.15 72.47,46.8 73.53,50.85 70,48.6 66.47,50.85 67.53,46.8 64.29,44.15 68.47,43.9" fill="#fff"/><g class="sway" style="transform-origin:0% 50%"><path d="M 118 54 Q 136 46 142 60 Q 130 60 120 58 Z" fill="#E53935" class="o2"/><path d="M 118 57 Q 132 68 130 80 Q 122 70 116 60 Z" fill="#E53935" class="o2"/></g><circle cx="118" cy="56" r="6" fill="#C62828" class="o2"/><g class="blink"><circle cx="50" cy="75" r="9" fill="#2B1A10"/><circle cx="47" cy="71" r="3.5" fill="#fff"/><circle cx="54" cy="79" r="1.6" fill="#fff"/></g><g class="blink"><circle cx="90" cy="75" r="9" fill="#2B1A10"/><circle cx="87" cy="71" r="3.5" fill="#fff"/><circle cx="94" cy="79" r="1.6" fill="#fff"/></g><path d="M 66 85 L 74 85 L 70 90 Z" fill="#FF7A8A" class="o2"/><path d="M 61 92 Q 65.5 98 70 92 Q 74.5 98 79 92" fill="none" class="o2"/><path d="M 34 88 L 14 84 M 34 93 L 14 95 M 106 88 L 126 84 M 106 93 L 126 95" stroke="#4B3426" stroke-width="1.8" stroke-linecap="round"/><ellipse cx="40" cy="92" rx="7" ry="4" fill="#FF8FA3" opacity="0.6"/><ellipse cx="100" cy="92" rx="7" ry="4" fill="#FF8FA3" opacity="0.6"/></g></g></svg>

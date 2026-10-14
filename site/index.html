@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>小朋友的寒假國語特攻隊</title>
+    <meta name="description" content="國小三年級國語文冒險闖關教材（POC 示範版）：第一課「說文解字」認識生字的部首與組成，第二課「成語猜謎」看圖猜成語、讀成語故事。" />
+    <meta name="theme-color" content="#FFD447" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="小朋友的寒假國語特攻隊" />
+    <meta property="og:description" content="把國語課變成一場好玩的冒險：說文解字、看圖猜成語，闖關拿星星！" />
+    <meta property="og:image" content="images/og-cover.jpg" />
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Huninn&family=LXGW+WenKai+TC:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="skip" href="#app">跳到主要內容</a>
+
+    <header class="topbar">
+      <div class="wrap">
+        <a class="brand" href="#/">
+          <img src="images/favicon.svg" alt="" width="42" height="42" />
+          <span>寒假國語特攻隊<small>國小三年級．冒險闖關</small></span>
+        </a>
+        <nav class="topnav" aria-label="主選單">
+          <a href="#/" data-nav="home">闖關地圖</a>
+          <a href="#/lesson1/0" data-nav="lesson1">第一課</a>
+          <a href="#/lesson2/0" data-nav="lesson2">第二課</a>
+          <a href="#/teacher" data-nav="teacher">教師版</a>
+        </nav>
+        <a class="star-pill" id="star-pill" href="#/finish" title="查看通關證書">⭐ <span id="star-count">0</span>／<span id="star-total">9</span></a>
+        <button class="icon-btn" id="sound-btn" type="button" aria-pressed="true" title="音效開關">🔊</button>
+      </div>
+    </header>
+
+    <main id="app" tabindex="-1">
+      <noscript>
+        <div class="wrap card" style="margin-top: 24px">這個闖關遊戲需要開啟瀏覽器的 JavaScript 才能遊玩喔！</div>
+      </noscript>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>「小朋友的寒假國語特攻隊」國語文教材 POC 示範版．適用國小三年級。插圖為本專案自繪的日系 Q 版向量圖。</p>
+        <p>查字典、找成語，推薦使用教育部線上資源：</p>
+        <ul id="ref-list"></ul>
+      </div>
+    </footer>
+
+    <div class="snow" id="snow" aria-hidden="true"></div>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <canvas id="confetti" aria-hidden="true"></canvas>
+
+    <script src="js/content.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </body>
+</html>
