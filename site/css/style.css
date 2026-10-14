@@ -974,6 +974,10 @@ details.teacher p {
   margin-top: 6px;
   font-weight: 700;
 }
+.char-big .zy .speak-btn {
+  vertical-align: middle;
+  margin-left: 6px;
+}
 .char-facts {
   display: flex;
   flex-wrap: wrap;

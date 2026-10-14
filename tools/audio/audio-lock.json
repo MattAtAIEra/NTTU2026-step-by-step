@@ -1,0 +1,194 @@
+{
+  "model": "gemini-3.8-flash-tts",
+  "checkModel": "gemini-3.8-flash",
+  "voice": "Sulafat",
+  "styleTag": "[warm, gentle, slightly slow storytelling voice for young children, Taiwanese Mandarin accent]",
+  "clips": {
+    "寒假第一天，小宇、小晴和小貓墨墨撿到一張舊地圖，上面寫著：「大樹林裡有文字寶藏！」三個好朋友馬上出發去探險。樹林裡的小路彎彎曲曲，他們一下子就迷路了。墨墨探出頭聞一聞，帶大家走過一座危險的獨木橋。最後，他們發現寶箱就藏在大樹洞裡，打開一看，裡面全是閃閃發亮的國字！": {
+      "label": "第一課短文",
+      "file": "audio/l1-story-d807b9cd71.mp3",
+      "seconds": 37.78,
+      "verified": true,
+      "similarity": 0.957,
+      "readings": {
+        "寶藏": "ㄗㄤˋ",
+        "藏在": "ㄘㄤˊ"
+      },
+      "problems": []
+    },
+    "探，探險的探。": {
+      "label": "生字讀音：探",
+      "file": "audio/l1-char1-say-c3086ca9ca.mp3",
+      "seconds": 3.05,
+      "verified": true,
+      "similarity": 1,
+      "readings": {},
+      "problems": []
+    },
+    "小狗從門後探出頭來，看看是誰來了。": {
+      "label": "生字例句：探",
+      "file": "audio/l1-char1-sentence-98d8706f19.mp3",
+      "seconds": 5.4,
+      "verified": true,
+      "similarity": 1,
+      "readings": {},
+      "problems": []
+    },
+    "險，危險的險。": {
+      "label": "生字讀音：險",
+      "file": "audio/l1-char2-say-3ce339118e.mp3",
+      "seconds": 3.24,
+      "verified": true,
+      "similarity": 1,
+      "readings": {},
+      "problems": []
+    },
+    "馬路上車子很多，在路邊追逐玩耍非常危險。": {
+      "label": "生字例句：險",
+      "file": "audio/l1-char2-sentence-8c216ab83e.mp3",
+      "seconds": 7.03,
+      "verified": true,
+      "similarity": 1,
+      "readings": {},
+      "problems": []
+    },
+    "迷，迷路的迷。": {
+      "label": "生字讀音：迷",
+      "file": "audio/l1-char3-say-9e50a553d0.mp3",
+      "seconds": 2.98,
+      "verified": true,
+      "similarity": 1,
+      "readings": {},
+      "problems": []
+    },
+    "弟弟看故事書看得入迷，連媽媽叫他吃飯都沒聽見。": {
+      "label": "生字例句：迷",
+      "file": "audio/l1-char3-sentence-30414738c5.mp3",
+      "seconds": 7.13,
+      "verified": true,
+      "similarity": 1,
+      "readings": {},
+      "problems": []
+    },
+    "寶，寶貝的寶。": {
+      "label": "生字讀音：寶",
+      "file": "audio/l1-char4-say-3b26400e2a.mp3",
+      "seconds": 2.66,
+      "verified": true,
+      "similarity": 1,
+      "readings": {},
+      "problems": []
+    },
+    "時間很寶貴，我們要好好把握。": {
+      "label": "生字例句：寶",
+      "file": "audio/l1-char4-sentence-24fdb24a29.mp3",
+      "seconds": 5.06,
+      "verified": true,
+      "similarity": 1,
+      "readings": {},
+      "problems": []
+    },
+    "藏有兩種念法：躲藏的藏，和寶藏的藏。": {
+      "label": "生字讀音：藏",
+      "file": "audio/l1-char5-say-c16ca6138c.mp3",
+      "seconds": 6.65,
+      "verified": true,
+      "similarity": 1,
+      "readings": {
+        "寶藏": "ㄗㄤˋ",
+        "躲藏": "ㄘㄤˊ"
+      },
+      "problems": []
+    },
+    "玩捉迷藏時，小晴藏在窗簾後面；圖書館裡的書，就像一座知識的寶藏。": {
+      "label": "生字例句：藏",
+      "file": "audio/l1-char5-sentence-8ab3cc1d83.mp3",
+      "seconds": 10.56,
+      "verified": true,
+      "similarity": 1,
+      "readings": {
+        "寶藏": "ㄗㄤˋ",
+        "藏在": "ㄘㄤˊ",
+        "捉迷藏": "ㄘㄤˊ"
+      },
+      "problems": []
+    },
+    "守株待兔": {
+      "label": "成語：守株待兔",
+      "file": "audio/l2-idiom1-name-1aa8f3521c.mp3",
+      "seconds": 2.35,
+      "verified": true,
+      "similarity": 1,
+      "readings": {},
+      "problems": []
+    },
+    "很久很久以前，宋國有一個農夫，每天都在田裡辛苦耕作。他的田中間有一根樹樁。有一天，一隻兔子跑得飛快，一頭撞上樹樁，折斷脖子死了。農夫白白撿到一隻兔子，高興極了！從此以後，他放下農具，不再耕田，每天坐在樹樁旁邊，等著再撿到兔子。可是，兔子再也沒有出現，田裡長滿了野草，農夫也成了宋國人的笑話。": {
+      "label": "成語故事：守株待兔",
+      "file": "audio/l2-idiom1-story-ed2116da6f.mp3",
+      "seconds": 41.71,
+      "verified": true,
+      "similarity": 0.992,
+      "readings": {},
+      "problems": []
+    },
+    "想要球技進步，就要天天練習，不能守株待兔，等著好運從天上掉下來。": {
+      "label": "成語例句：守株待兔（1）",
+      "file": "audio/l2-idiom1-example1-dd6e2b8eee.mp3",
+      "seconds": 11.06,
+      "verified": true,
+      "similarity": 1,
+      "readings": {},
+      "problems": []
+    },
+    "哥哥上次在公園撿到一枚十元硬幣，之後天天去同一個地方守株待兔，結果再也沒撿到。": {
+      "label": "成語例句：守株待兔（2）",
+      "file": "audio/l2-idiom1-example2-a90ef1348b.mp3",
+      "seconds": 11.86,
+      "verified": true,
+      "similarity": 1,
+      "readings": {},
+      "problems": []
+    },
+    "畫龍點睛": {
+      "label": "成語：畫龍點睛",
+      "file": "audio/l2-idiom2-name-97be50a5b7.mp3",
+      "seconds": 2.4,
+      "verified": true,
+      "similarity": 1,
+      "readings": {},
+      "problems": []
+    },
+    "南北朝的時候，梁朝有一位很會畫畫的畫家，名叫張僧繇。有一次，他在金陵安樂寺的牆上畫了四條白龍，每一條都畫得像真的一樣，可是都沒有畫上眼睛。有人問他為什麼，他說：「點上眼睛，龍就會飛走。」大家都覺得他在說大話，一直請他點上去。張僧繇只好拿起筆，替其中兩條龍點上眼睛。沒多久，天空打雷閃電，牆壁破開，那兩條龍駕著雲飛上天去了；沒有點上眼睛的兩條龍，還留在牆上。": {
+      "label": "成語故事：畫龍點睛",
+      "file": "audio/l2-idiom2-story-6b35e7ebb0.mp3",
+      "seconds": 50.78,
+      "verified": true,
+      "similarity": 1,
+      "readings": {
+        "張僧繇": "ㄧㄠˊ",
+        "金陵": "ㄌㄧㄥˊ"
+      },
+      "problems": []
+    },
+    "小晴在作文最後加了一句「原來，最好的寶藏就是好朋友」，真是畫龍點睛，讓整篇文章更感人。": {
+      "label": "成語例句：畫龍點睛（1）",
+      "file": "audio/l2-idiom2-example1-7ef8ea7a40.mp3",
+      "seconds": 14.42,
+      "verified": true,
+      "similarity": 1,
+      "readings": {
+        "寶藏": "ㄗㄤˋ"
+      },
+      "problems": []
+    },
+    "媽媽在蛋糕上放了一顆紅通通的草莓，有畫龍點睛的效果，蛋糕看起來更可口了。": {
+      "label": "成語例句：畫龍點睛（2）",
+      "file": "audio/l2-idiom2-example2-d210eaa2ab.mp3",
+      "seconds": 11.23,
+      "verified": true,
+      "similarity": 1,
+      "readings": {},
+      "problems": []
+    }
+  }
+}

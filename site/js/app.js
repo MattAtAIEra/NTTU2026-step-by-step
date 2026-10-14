@@ -222,12 +222,18 @@
   };
 
   // ---------------------------------------------------------------
-  // 念給我聽（瀏覽器內建語音）
+  // 念給我聽：優先播放 Gemini TTS 預先產生的音檔（js/audio-manifest.js），
+  // 找不到對應音檔時（例如文字改過、還沒重新產生），改用瀏覽器內建語音
   // ---------------------------------------------------------------
+  var CLIPS = window.AUDIO_CLIPS || {};
   var TTS = {
-    ok: 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window,
+    synth: 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window,
     voice: null,
     current: null,
+    audio: null,
+    can: function (text) {
+      return !!CLIPS[text] || this.synth;
+    },
     pick: function () {
       try {
         var vs = window.speechSynthesis.getVoices();
@@ -244,37 +250,69 @@
       }
     },
     stop: function () {
-      if (!this.ok) return;
-      window.speechSynthesis.cancel();
+      if (this.audio) {
+        this.audio.pause();
+        this.audio = null;
+      }
+      if (this.synth) window.speechSynthesis.cancel();
       if (this.current) this.current.classList.remove('speaking');
       this.current = null;
     },
     speak: function (text, btn) {
-      if (!this.ok) return;
-      var again = this.current === btn;
+      var again = btn && this.current === btn;
       this.stop();
       if (again) return;
-      var u = new SpeechSynthesisUtterance(text);
-      u.lang = 'zh-TW';
-      if (this.voice) u.voice = this.voice;
-      u.rate = 0.85;
       var self = this;
-      u.onend = u.onerror = function () {
+      var done = function () {
         if (btn) btn.classList.remove('speaking');
         if (self.current === btn) self.current = null;
       };
       if (btn) btn.classList.add('speaking');
       this.current = btn || null;
+      if (!CLIPS[text]) {
+        this.synthSpeak(text, done);
+        return;
+      }
+      var a = new Audio(CLIPS[text]);
+      var fellBack = false;
+      var fallback = function () {
+        if (fellBack || self.audio !== a) return;
+        fellBack = true;
+        self.audio = null;
+        self.synthSpeak(text, done);
+      };
+      this.audio = a;
+      a.onended = done;
+      a.onerror = fallback;
+      var p = a.play();
+      if (p && p.catch) {
+        p.catch(function (err) {
+          if (err && err.name === 'AbortError') return;
+          if (err && err.name === 'NotAllowedError') done();
+          else fallback();
+        });
+      }
+    },
+    synthSpeak: function (text, done) {
+      if (!this.synth) {
+        done();
+        return;
+      }
+      var u = new SpeechSynthesisUtterance(text);
+      u.lang = 'zh-TW';
+      if (this.voice) u.voice = this.voice;
+      u.rate = 0.85;
+      u.onend = u.onerror = done;
       window.speechSynthesis.speak(u);
     },
   };
-  if (TTS.ok) {
+  if (TTS.synth) {
     TTS.pick();
     if (window.speechSynthesis.addEventListener) window.speechSynthesis.addEventListener('voiceschanged', TTS.pick.bind(TTS));
   }
 
   function speakBtn(text, label) {
-    if (!TTS.ok) return '';
+    if (!TTS.can(text)) return '';
     return '<button type="button" class="speak-btn" data-act="speak" data-text="' + esc(text) + '" aria-label="' + esc(label || '念給我聽') + '" title="念給我聽">🔊</button>';
   }
 
@@ -720,7 +758,7 @@
   function toolsBar(text) {
     return (
       '<div class="tools">' +
-      (TTS.ok ? '<button type="button" class="btn small yellow" data-act="speak" data-text="' + esc(text) + '">🔊 念給我聽</button>' : '') +
+      (TTS.can(text) ? '<button type="button" class="btn small yellow" data-act="speak" data-text="' + esc(text) + '">🔊 念給我聽</button>' : '') +
       '<button type="button" class="btn small" data-act="zhuyin" aria-pressed="' + !state.zhuyin + '">' + (state.zhuyin ? '🙈 隱藏注音挑戰' : '👀 顯示注音') + '</button>' +
       '</div>'
     );
@@ -769,7 +807,7 @@
     return (
       '<div class="char-big">' +
       '<div class="grid" aria-hidden="true">' + c.char + '</div>' +
-      '<div class="zy">' + c.zhuyin + (c.zhuyin2 ? '／' + c.zhuyin2 : '') + '</div>' +
+      '<div class="zy">' + c.zhuyin + (c.zhuyin2 ? '／' + c.zhuyin2 : '') + ' ' + speakBtn(c.say, '念「' + c.char + '」的讀音') + '</div>' +
       '<div class="char-facts"><span class="chip blue">部首：' + c.radical + '</span><span class="chip pink">總筆畫：' + c.strokes + ' 畫</span></div>' +
       '<p class="note">' + esc(c.parts) + '</p>' +
       '</div>'
@@ -898,6 +936,11 @@
   }
 
   // 第二課 B：看圖猜成語
+  function idiomSpeak(it) {
+    var b = speakBtn(it.answer, '念「' + it.answer + '」');
+    return b ? '<p style="text-align:center;margin:0 0 6px">' + b + '</p>' : '';
+  }
+
   function revealTiles(it, withZy) {
     return (
       '<div class="reveal' + (withZy === false ? '' : ' with-zy') + '" aria-label="' + it.answer + '">' +
@@ -928,6 +971,7 @@
         '<h4>答對了！就是「' + it.answer + '」' + (state.stars[rid] ? '　⭐ 一次就猜中，獲得一顆星星！' : '') + '</h4>' +
         '<p>' + esc(it.meaning) + '</p></div></div>' +
         revealTiles(it) +
+        idiomSpeak(it) +
         '<div class="quiz-actions" style="justify-content:center"><a class="btn primary" href="#/lesson2/' + nextIdx + '">📖 看「' + it.answer + '」的故事 →</a></div>';
     } else if (lastWrong) {
       fb = '<div class="fb no"><img src="images/momo-think.svg" alt="" width="70" height="74"><div><h4>不是「' + esc(lastWrong) + '」喔！</h4><p>' + esc(r.wrongFeedback[lastWrong] || '') + '</p><p>' + esc(r.hint) + '</p></div></div>';
@@ -975,6 +1019,7 @@
       cardOpen(opts) +
       '<h2 class="step-title"><span class="tag">C</span>' + esc(s.title) + '</h2>' +
       revealTiles(it) +
+      idiomSpeak(it) +
       toolsBar(plain(s.text)) +
       '<p class="story' + (state.zhuyin ? '' : ' hide-zhuyin') + '">' + rubyHTML(s.text) + '</p>' +
       '<p class="source">📚 故事出處：' + rubyHTML(s.source) + '</p>' +
@@ -994,6 +1039,7 @@
       cardOpen(opts) +
       '<h2 class="step-title"><span class="tag">D</span>成語解釋：' + it.answer + '</h2>' +
       revealTiles(it) +
+      idiomSpeak(it) +
       '<h3>🔍 一個字一個字看</h3>' +
       '<div class="literal">' + it.literal.map(function (l) {
         return '<div><b>' + l[0] + '</b><span>' + esc(l[1]) + '</span></div>';
@@ -1135,6 +1181,8 @@
     h += '<tr><th>學習情境</th><td>冒險闖關：第一課森林尋寶、第二課搭時光機回到成語故事裡</td></tr>';
     h += '<tr><th>教材難度</th><td>適中，循序漸進：先看圖、再讀文、後解字，最後作答</td></tr>';
     h += '<tr><th>題型</th><td>看圖猜謎＋四選一選擇題。答錯可以再試，會出現提示；第一次就答對可得一顆星星，全課共 ' + STAR_IDS.length + ' 顆。</td></tr>';
+    var ai = window.AUDIO_INFO;
+    h += '<tr><th>朗讀語音</th><td>' + (ai ? '以 Gemini TTS（' + esc(ai.model) + '，聲音 ' + esc(ai.voice) + '）預先產生，共 ' + Object.keys(CLIPS).length + ' 段，並以 Gemini 聽寫自動核對內容與破音字讀音。' : '使用瀏覽器內建語音。') + '</td></tr>';
     h += '</tbody></table></div></div>';
 
     h += '<h2>角色設定與畫風</h2><div class="card"><div class="team"><img src="images/team.svg" alt="特攻隊成員：小宇、墨墨、小晴" width="600" height="370"><div class="team-members">';

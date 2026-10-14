@@ -6,6 +6,10 @@
  * 文字標記方式：
  *   {字|注音}  目標生字（會加上注音並標示顏色，可點開生字卡）
  *   [字|注音]  一般難字（只加上注音）
+ *
+ * 朗讀音檔：短文、故事、例句、生字讀音（say）都會由 tools/audio/build-audio.mjs
+ * 用 Gemini TTS 預先產生。修改這些文字後，請重新執行該程式；
+ * 尚未重新產生前，網頁會暫時改用瀏覽器內建語音。
  */
 window.COURSE = {
   title: '小朋友的寒假國語特攻隊',
@@ -84,6 +88,7 @@ window.COURSE = {
     chars: [
       {
         char: '探',
+        say: '探，探險的探。',
         zhuyin: 'ㄊㄢˋ',
         radical: '手（扌）',
         strokes: 11,
@@ -96,6 +101,7 @@ window.COURSE = {
       },
       {
         char: '險',
+        say: '險，危險的險。',
         zhuyin: 'ㄒㄧㄢˇ',
         radical: '阜（阝）',
         strokes: 16,
@@ -108,6 +114,7 @@ window.COURSE = {
       },
       {
         char: '迷',
+        say: '迷，迷路的迷。',
         zhuyin: 'ㄇㄧˊ',
         radical: '辵（辶）',
         strokes: 10,
@@ -120,6 +127,7 @@ window.COURSE = {
       },
       {
         char: '寶',
+        say: '寶，寶貝的寶。',
         zhuyin: 'ㄅㄠˇ',
         radical: '宀',
         strokes: 20,
@@ -132,6 +140,7 @@ window.COURSE = {
       },
       {
         char: '藏',
+        say: '藏有兩種念法：躲藏的藏，和寶藏的藏。',
         zhuyin: 'ㄘㄤˊ',
         zhuyin2: 'ㄗㄤˋ',
         radical: '艸（艹）',
